@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: ko961jppp-go
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: ko961jppp-go 
+  name: ko961jppp-go
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: ko961jppp-go
+    weight: 100 
